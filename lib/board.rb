@@ -1,3 +1,3 @@
 # Define the variable board below.
-board = []
-board[0,8] = " "
+board = Array.new(9, " ")
+puts board
