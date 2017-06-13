@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Tic+Tac+Toe+Board">Tic Tac Toe Board</a>
+    <li><a href="#label-Overview">Overview</a>
+    <li><a href="#label-The+Tic+Tac+Toe+Board">The Tic Tac Toe Board</a>
+    <li><a href="#label-Representing+the+Board+as+an+Array">Representing the Board as an Array</a>
+    <li><a href="#label-Objectives">Objectives</a>
+    <li><a href="#label-Instructions">Instructions</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Tic+Tac+Toe+Board">Tic Tac Toe Board<span><a href="#label-Tic+Tac+Toe+Board">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-The+Tic+Tac+Toe+Board">The Tic Tac Toe Board<span><a href="#label-The+Tic+Tac+Toe+Board">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>When building a Tic Tac Toe program, you&#39;re going to have to figure out
+a way to store or represent the game board. Looking at a Tic Tac Toe board,
+we can identify a few properties.</p>
+
+<pre>|   |
+-----------      
+   |   |
+-----------   
+   |   |</pre>
+
+<p>A Tic Tac Toe board is basically a 3x3 grid with 9 total positions. You
+could think of the positions as being numbered, from top left to bottom
+right, as:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">|</span> <span class="ruby-value">2</span> <span class="ruby-operator">|</span> <span class="ruby-value">3</span>
+<span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span>      
+ <span class="ruby-value">4</span> <span class="ruby-operator">|</span> <span class="ruby-value">5</span> <span class="ruby-operator">|</span> <span class="ruby-value">6</span>
+<span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span>   
+ <span class="ruby-value">7</span> <span class="ruby-operator">|</span> <span class="ruby-value">8</span> <span class="ruby-operator">|</span> <span class="ruby-value">9</span>
+</pre>
+
+<p>Each cell in the Tic Tac Toe board can thus be referred to by a simple
+single number identifier. The middle square would be referred to as
+<code>5</code>.</p>
+
+<p>This is super useful because it will eventually allow players to easily
+tell the program where they want to move. The player X could tell the
+program they want to move to the top left corner by saying “1”. The board
+would represent that graphically (through ASCII) via:</p>
+
+<pre>X |   |
+-----------      
+   |   |
+-----------   
+   |   |</pre>
+
+<p>ASCII just means using standard keyboard characters, also known as the
+ASCII character set, to draw graphics.</p>
+
+<p>An ASCII Cat:</p>
+
+<pre>/\     /\
+{  `---&#39;  }
+{  O   O  }
+~~&gt;  V  &lt;~~
+ \  \|/  /
+  `-----&#39;__
+  /     \  `^\_
+ {       }\ |\_\_   W
+ |  \_/  |/ /  \_\_( )
+  \__/  /(_O     \__/
+    (  /
+     ME</pre>
+
+<h3 id="label-Representing+the+Board+as+an+Array">Representing the Board as an Array<span><a href="#label-Representing+the+Board+as+an+Array">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Now that we have simplified the concept of a Tic Tac Toe board to a
+collection of 9 positions or cells, easily identified by number, how can we
+represent this in code? What tool do we have at our disposal that can
+represent a collection of things? Is there some magical way to store data
+in ruby as an ordered, indexed, list? If you&#39;re thinking “We can use an
+Array!”, you&#39;re absolutely right.</p>
+
+<p>We need an array that has 9 elements. Each element in the array represents
+a position in the board. The first element in the array, index 0, is
+actually position 1 on the board, the top left corner. We&#39;ll represent
+the value of a position with a string that has a single space, <code>&quot;
+&quot;</code>.</p>
+
+<p>As a simplified example, imagine only a single row of tic tac toe. You
+would represent that with the following array:</p>
+
+<pre class="ruby"><span class="ruby-identifier">row</span> = [<span class="ruby-string">&quot; &quot;</span>, <span class="ruby-string">&quot; &quot;</span>, <span class="ruby-string">&quot; &quot;</span>]
+
+<span class="ruby-comment"># Position 1: Left</span>
+<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>]
+
+<span class="ruby-comment"># Position 2: Middle</span>
+<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>]
+
+<span class="ruby-comment"># Position 3: Right</span>
+<span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>]
+
+<span class="ruby-comment"># Move X to the Position 2, Middle</span>
+<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>] = <span class="ruby-string">&quot;X&quot;</span>
+<span class="ruby-identifier">row</span> <span class="ruby-comment">#=&gt; [&quot; &quot;, &quot;X&quot;, &quot; &quot;]</span>
+</pre>
+
+<p>*Note: You should create a simple array with one element for each position
+on the board. There are some more complex ways you could solve this with an
+array for each row of the board saved within the array for the board (a
+nested or multi-dimensional array). Don&#39;t do that - it&#39;ll just make
+your code harder to work with for now.</p>
+
+<p><em>Remember: Represent a position in the board array as a string with a
+space in it: <code>&quot; &quot;</em></code></p>
+
+<h2 id="label-Objectives">Objectives<span><a href="#label-Objectives">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ol><li>
+<p>Define a local variable <code>board</code>.</p>
+</li><li>
+<p>Assign <code>board</code> to an array with 9 string elements.</p>
+</li></ol>
+
+<h2 id="label-Instructions">Instructions<span><a href="#label-Instructions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ol><li>
+<p>Define a local variable in <code>lib/board.rb</code> called
+<code>board</code></p>
+</li><li>
+<p>Set the <code>board</code> local variable equal to an array.</p>
+</li><li>
+<p>Fill the <code>board</code> array with 9 strings containing a single space:
+<code>&quot; &quot;</code>.</p>
+</li><li>
+<p>Run <code>learn</code> and read output and fix any errors.</p>
+</li><li>
+<p>Submit your solution with <code>learn submit</code>.</p>
+</li></ol>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-2-board-rb' title='Tic Tac Toe Board'>Tic Tac Toe Board</a> on Learn.co and start learning to code for free.</p></main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
