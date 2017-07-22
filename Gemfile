@@ -5,3 +5,11 @@ source "https://rubygems.org"
 
 gem 'rspec'
 gem 'pry'
+
+board = ["","","","","","","","",""]
+
+puts "   |   |"
+puts "-----------"
+puts "   |   |"
+puts "-----------"
+puts "   |   |"
