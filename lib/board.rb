@@ -1,3 +1,3 @@
-Integer board
+board=Array.new
 
-board=[" ", " ", " "," "," "," "," "," "," "]
+board = [" ", " ", " "," "," "," "," "," "," "]
