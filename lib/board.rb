@@ -1,1 +1,1 @@
-# Define the variable board below.
+board = ["sure," "med," "hew," "hey," "ass," "hem," "acts," "noo," "mas,"]
